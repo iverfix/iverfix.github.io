@@ -1,27 +1,29 @@
-class Bil{
-  constructor(name){
-    this.name = name;
-  }
-  tut(){
-    return this.name;
-  }
-}
+var tur = "O";
 
-function myFunction() {
- document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
+function klikk(id){
+  document.getElementById(id).style.backgroundColor = "#074cbc";
+  document.getElementById(id).innerHTML = tur;
 
-function Elise(){
-  var x,y,z;
-  x = 5;
-  y = 6;
-  z = x + y;
-  for (var i = 0; i < 20; i++) {
-    window.alert(z + i);
+  if(tur =="O"){
+    tur = "X";
+  }
+  else{
+    tur ="O";
   }
 }
 
-function Iver(){
-  var bil = new Bil("Volvo");
-  document.getElementById("demo").innerHTML = bil.tut();
+
+function sjekkSeier(symbol){
+  sjekkTrePåRad(document.getElementById('d1').innerHTML,document.getElementById('d2').innerHTML,document.getElementById('d3').innerHTML);
+
+  document.getElementById("demo").innerHTML = tur + " vant :)";
+}
+
+function sjekkTrePåRad(verdi1,verdi2,verdi3){
+  if((verdi1 == verdi2) && (verdi1==verdi3)){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
